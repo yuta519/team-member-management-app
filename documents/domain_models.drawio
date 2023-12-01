@@ -1,9 +1,36 @@
-<mxfile host="app.diagrams.net" modified="2023-12-01T20:06:41.576Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36" version="22.1.5" etag="cZldwtBXt7EQb2F071E5" type="github">
+<mxfile host="app.diagrams.net" modified="2023-12-01T20:16:50.623Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36" etag="Tt94QEO2FZd-Vqj94ocC" version="22.1.5" type="github">
   <diagram name="Page-1" id="B_gOehbloBb_RJARg5Fa">
-    <mxGraphModel>
+    <mxGraphModel dx="481" dy="415" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
+        <mxCell id="DzC5LRmNOH0KshEsjThY-1" value="member" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="355" y="410" width="105" height="210" as="geometry" />
+        </mxCell>
+        <mxCell id="DzC5LRmNOH0KshEsjThY-2" value="id" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="DzC5LRmNOH0KshEsjThY-1">
+          <mxGeometry y="30" width="105" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="DzC5LRmNOH0KshEsjThY-3" value="first_name" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="DzC5LRmNOH0KshEsjThY-1">
+          <mxGeometry y="60" width="105" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="DzC5LRmNOH0KshEsjThY-4" value="last_name" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="DzC5LRmNOH0KshEsjThY-1">
+          <mxGeometry y="90" width="105" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="DzC5LRmNOH0KshEsjThY-14" value="phone" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="DzC5LRmNOH0KshEsjThY-1">
+          <mxGeometry y="120" width="105" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="DzC5LRmNOH0KshEsjThY-13" value="email" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="DzC5LRmNOH0KshEsjThY-1">
+          <mxGeometry y="150" width="105" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="DzC5LRmNOH0KshEsjThY-15" value="role" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="DzC5LRmNOH0KshEsjThY-1">
+          <mxGeometry y="180" width="105" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="DzC5LRmNOH0KshEsjThY-18" value="&quot;phone&quot; and&amp;nbsp; &quot;email&quot; are not duplicate, but unique" style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;position2=1;base=20;size=30;position=0.75;fontSize=8;" vertex="1" parent="1">
+          <mxGeometry x="230" y="480" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="DzC5LRmNOH0KshEsjThY-19" value="&lt;font size=&quot;1&quot;&gt;&quot;role&quot; has 2 values, &quot;regular&quot; or &quot;admin&quot;&lt;/font&gt;" style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;rotation=0;position2=0;base=10;size=30;position=0.08;direction=east;" vertex="1" parent="1">
+          <mxGeometry x="470" y="530" width="120" height="60" as="geometry" />
+        </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
