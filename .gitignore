@@ -1,1 +1,5 @@
+# Virtual environment for this python project
 .venv
+
+# Using sqlite
+db.sqlite3
