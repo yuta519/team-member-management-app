@@ -2,7 +2,7 @@
 <h1>Add a team member</h1>
 <form method="post" enctype="multipart/form-data">
   {% csrf_token %} {{ form.as_p }}
-  <button type="submit">Save</button>
+  <button type="submit" class="save-button">Save</button>
 </form>
 <a href="{% url 'members:list' %}">Cancel</a>
 {% endblock %}
