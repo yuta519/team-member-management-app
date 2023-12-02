@@ -17,3 +17,6 @@ class Member(models.Model):
         choices=Role.choices,
         default=Role.REGULAR,
     )
+
+    class Meta:
+        db_table = "members"
