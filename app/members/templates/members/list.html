@@ -8,10 +8,12 @@
   {% for member in member_list %}
   <li>
     <div class="contact-info">
-      <div class="contact-name">
-        {{ member.first_name }} {{ member.last_name }}
-        <span>{% if member.role == "admin" %}(admin){% endif %}</span>
-      </div>
+      <a href={% url "members:edit" member.id %}>
+        <div class="contact-name">
+          {{ member.first_name }} {{ member.last_name }}
+          <span>{% if member.role == "admin" %}(admin){% endif %}</span>
+        </div>
+      </a>
       <div class="contact-phone">{{ member.phone }}</div>
       <div class="contact-email">{{ member.email }}</div>
     </div>

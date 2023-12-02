@@ -1,4 +1,3 @@
-from django.urls import reverse_lazy
 from django.views import generic
 
 from members.forms import MemberForm
@@ -14,4 +13,11 @@ class MemberCreateView(generic.CreateView):
     model = Member
     form_class = MemberForm
     template_name = "members/create.html"
-    success_url = reverse_lazy('members:list')
+    success_url = "/members"
+
+
+class MemberEditView(generic.UpdateView):
+    model = Member
+    template_name = "members/edit.html"
+    success_url = "/members"
+    fields = ["first_name", "last_name", "phone", "email", "role"]
