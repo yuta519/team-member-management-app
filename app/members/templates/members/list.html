@@ -1,6 +1,9 @@
 {% extends 'members/base.html' %} {% block content %}
+{% load static %}
 <div>
-  <a href="{% url 'members:create' %}">+</a>
+  <a href="{% url 'members:create' %}">
+    <img src="{% static 'draw.svg' %}" class="add-button" alt="Add Button Image">
+  </a>
 </div>
 <h1>Team members</h1>
 <h3>You have {{ member_list | length }} team members.</h3>
