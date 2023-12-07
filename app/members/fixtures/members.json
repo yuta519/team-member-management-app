@@ -1,0 +1,57 @@
+[
+{
+  "model": "members.member",
+  "pk": 1,
+  "fields": {
+    "first_name": "John",
+    "last_name": "",
+    "phone": "",
+    "email": "john@example.com",
+    "role": "regular"
+  }
+},
+{
+  "model": "members.member",
+  "pk": 2,
+  "fields": {
+    "first_name": "Tom",
+    "last_name": "Cruise",
+    "phone": "",
+    "email": "tom@example.com",
+    "role": "regular"
+  }
+},
+{
+  "model": "members.member",
+  "pk": 3,
+  "fields": {
+    "first_name": "Robert",
+    "last_name": "",
+    "phone": "",
+    "email": "robert@example.com",
+    "role": "regular"
+  }
+},
+{
+  "model": "members.member",
+  "pk": 4,
+  "fields": {
+    "first_name": "David",
+    "last_name": "",
+    "phone": "",
+    "email": "david@example.com",
+    "role": "regular"
+  }
+},
+{
+  "model": "members.member",
+  "pk": 5,
+  "fields": {
+    "first_name": "Yuta",
+    "last_name": "Kawamura",
+    "phone": "6728339616",
+    "email": "ytkwmr18@gmail.com",
+    "role": "admin"
+  }
+}
+]
