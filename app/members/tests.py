@@ -49,23 +49,42 @@ class MemberModelTests(TestCase):
             Member.objects.get(email="non_exist@example.com")
 
     def test_update_first_name(self):
+        updated_value = "Updated First Name"
         member = Member.objects.get(email=self.email)
-        member.first_name = "Updated First Name"
+        member.first_name = updated_value
         member.save()
-        print(member.first_name)
-        self.__compare_member_values(member, first_name="Updated First Name")
+        self.__compare_member_values(member, first_name=updated_value)
 
     def test_update_last_name(self):
-        pass
+        updated_value = "Updated Last Name"
+        member = Member.objects.get(email=self.email)
+        member.last_name = updated_value
+        member.save()
+        self.__compare_member_values(member, last_name=updated_value)
 
     def test_update_phone(self):
-        pass
+        updated_value = "Updated phone"
+        member = Member.objects.get(email=self.email)
+        member.phone = updated_value
+        member.save()
+        self.__compare_member_values(member, phone=updated_value)
 
     def test_update_email(self):
-        pass
+        updated_value = "Updated email"
+        member = Member.objects.get(email=self.email)
+        member.email = updated_value
+        member.save()
+        self.__compare_member_values(member, email=updated_value)
+
+        # For tearDown, change the email value to original one
+        member.email = self.email
+        member.save()
 
     def test_update_role(self):
-        pass
+        member = Member.objects.get(email=self.email)
+        member.role = Member.Role.ADMIN
+        member.save()
+        self.__compare_member_values(member, role=Member.Role.ADMIN)
 
     def __compare_member_values(self, member: Member, **kawargs) -> None:
         self.assertEqual(member.first_name, kawargs.get("first_name", self.first_name))
