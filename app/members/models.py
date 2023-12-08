@@ -14,5 +14,11 @@ class Member(models.Model):
     email = models.EmailField(null=False, blank=False)
     role = models.CharField(max_length=10, choices=Role.choices, default=Role.REGULAR)
 
+    def concat_name(self):
+        return f'{self.first_name} {self.last_name}'
+
+    def is_admin(self):
+        return self.role == self.Role.ADMIN
+
     class Meta:
         db_table = "members"
