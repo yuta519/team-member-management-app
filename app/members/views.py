@@ -18,9 +18,10 @@ class MemberCreateView(generic.CreateView):
 
 class MemberEditView(generic.UpdateView):
     model = Member
+    form_class = MemberForm
     template_name = "members/edit.html"
     success_url = "/members"
-    fields = ["first_name", "last_name", "phone", "email", "role"]
+    # fields = ["first_name", "last_name", "phone", "email", "role"]
 
 
 class MemberDeleteView(generic.edit.DeleteView):
