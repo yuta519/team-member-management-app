@@ -1,11 +1,44 @@
 {% extends 'members/base.html' %} {% block content %}
 <h1>Edit team member</h1>
+<h3>Edit contact info, location and role.</h3>
 <form method="post" enctype="multipart/form-data">
-  {% csrf_token %} {{ form.as_p }}
-  <button type="submit" class="save-button">Save</button>
-</form>
-<a href="{% url 'members:list' %}">Cancel</a>
-<form method="post" action="{% url 'members:delete' member.id %}">
   {% csrf_token %}
-  <button type="submit">Delete</button>
-</form>{% endblock %}
+  <div class="form-field">
+    <div class="form-section">
+      <div class="form-title-container">
+        <label class="form-title">Info</label>
+      </div>
+    {{ form.first_name }}
+    {{ form.last_name }}
+    {{ form.phone }}
+    {{ form.email }}
+  </div>
+  <div class="form-field">
+    <div class="form-section">
+      <div class="form-title-container">
+        <label class="form-title">Role</label>
+      </div>
+      <ul>
+        {% for radio in form.role %}
+          <li>
+            {{ radio.tag }}
+            <label for="value_{{ forloop.counter0 }}">
+              {% if radio.choice_label == 'Regular' %} Regular - can't delete member
+              {% elif radio.choice_label == 'Admin' %} Admin - can delete member
+              {% endif %}
+            </label>
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+  <div class="form-button-container">
+    <form method="post" action="{% url 'members:delete' member.id %}">
+      {% csrf_token %}
+      <button type="submit" class="delete-button">Delete</button>
+    </form>
+    <button type="submit" class="save-button">Save</button>
+  </div>
+  <a href="{% url 'members:list' %}">Cancel</a>
+  </form>
+{% endblock %}
