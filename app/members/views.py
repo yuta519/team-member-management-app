@@ -13,16 +13,16 @@ class MemberCreateView(generic.CreateView):
     model = Member
     form_class = MemberForm
     template_name = "members/create.html"
-    success_url = "/members"
+    success_url = "/"
 
 
 class MemberEditView(generic.UpdateView):
     model = Member
     form_class = MemberForm
     template_name = "members/edit.html"
-    success_url = "/members"
+    success_url = "/"
 
 
-class MemberDeleteView(generic.edit.DeleteView):
+class MemberDeleteView(generic.DeleteView):
     model = Member
-    success_url = "/members"
+    success_url = "/"
