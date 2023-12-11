@@ -25,10 +25,10 @@ jobs:
         working-directory: ./app/members
       - name: Install requirements
         run: pip install -r requirements.txt
-        working-directory: ./app/members
+        working-directory: ./app
       - name: Run Migrations
         run: python manage.py migrate
-        working-directory: ./app/members
+        working-directory: ./app
       - name: Run Test
         run: python manage.py test
-        working-directory: ./app/members
+        working-directory: ./app
