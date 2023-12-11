@@ -21,7 +21,6 @@ class MemberEditView(generic.UpdateView):
     form_class = MemberForm
     template_name = "members/edit.html"
     success_url = "/members"
-    # fields = ["first_name", "last_name", "phone", "email", "role"]
 
 
 class MemberDeleteView(generic.edit.DeleteView):
