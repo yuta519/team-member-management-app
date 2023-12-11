@@ -20,7 +20,7 @@
       {% for radio in form.role %}
       <li>
         {{ radio.tag }}
-        <label for="value_{{ forloop.counter0 }}">
+        <label for="id_role_{{ forloop.counter0 }}">
           {% if radio.choice_label == 'Regular' %} Regular - can't delete member
           {% elif radio.choice_label == 'Admin' %} Admin - can delete member
           {% endif %}
