@@ -1,4 +1,5 @@
-from django.test import TestCase
+from django.test import Client, TestCase
+from django.urls import reverse
 
 from members.models import Member
 
@@ -92,3 +93,33 @@ class MemberModelTests(TestCase):
         self.assertEqual(member.phone, kawargs.get("phone", self.phone))
         self.assertEqual(member.email, kawargs.get("email", self.email))
         self.assertEqual(member.role, kawargs.get("role", Member.Role.REGULAR))
+
+
+class MemberListViewTests(TestCase):
+    # On fixtures, there are 5 members.
+    fixtures = ["members.json"]
+    client = Client()
+
+    def test_title_and_header(self):
+        response = self.client.get(reverse("members:list"))
+        self.assertEqual(response.status_code, 200)
+        self.assertContains(response, "Team Member Management App")
+        self.assertContains(response, "Team members")
+
+    def test_amount_of_members(self):
+        response = self.client.get(reverse("members:list"))
+        self.assertContains(response, "You have 5 team members.")
+
+    def test_amout_of_members_when_add_new_member(self):
+        member = Member.objects.create()
+        member.save()
+
+        response = self.client.get(reverse("members:list"))
+        self.assertContains(response, "You have 6 team members.")
+
+    def test_amout_of_members_when_delete_a_member(self):
+        member = Member.objects.get(pk=1)
+        member.delete()
+
+        response = self.client.get(reverse("members:list"))
+        self.assertContains(response, "You have 4 team members.")
