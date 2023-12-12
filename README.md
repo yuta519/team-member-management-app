@@ -5,17 +5,24 @@
 - Add page, which creates a new team member
 - Edit page, which updates or deletes a existing user
 
-## Setup
-0. Python setup
-If you are using any virtualenv management tools, please create it by tools.
+## Technology Stack
+- Python 3.10.6=<
+- Django 4.2.7
+- SQLite
 
-1. Install
+## Setup
+0. Move to application and Python setup.
 ```bash
-cd app
+cd ./team-member-management-app/app
+python -m venv .venv # This is optional.
+```
+
+1. Install requirements
+```bash
 pip install -r requirements.txt
 ```
 
-2. Database migrate
+2. Init database
 ```bash
 python manage.py migrate
 ```
@@ -29,3 +36,6 @@ python manage.py runserver
 ```bash
 python manage.py test
 ```
+
+## Note
+- When running migrate command, SQLite, `db.sqlite3` file will be created.
