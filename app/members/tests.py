@@ -87,6 +87,20 @@ class MemberModelTests(TestCase):
         member.save()
         self.__compare_member_values(member, role=Member.Role.ADMIN)
 
+    def test_is_admin__reqular_user(self):
+        member = Member.objects.get(email=self.email)
+        self.assertEqual(member.is_admin(), False)
+
+    def test_is_admin_with_admin_user(self):
+        member = Member.objects.get(email=self.email)
+        member.role = Member.Role.ADMIN
+        member.save()
+        self.assertEqual(member.is_admin(), True)
+
+    def test_concat_name(self):
+        member = Member.objects.get(email=self.email)
+        self.assertEqual(member.concat_name(), f'{self.first_name} {self.last_name}')
+
     def __compare_member_values(self, member: Member, **kawargs) -> None:
         self.assertEqual(member.first_name, kawargs.get("first_name", self.first_name))
         self.assertEqual(member.last_name, kawargs.get("last_name", self.last_name))
